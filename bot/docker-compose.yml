@@ -1,0 +1,12 @@
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+      - ../questions-repo:/questions-repo:ro
+    environment:
+      - QUESTIONS_README_PATH=/questions-repo/README.md
+    restart: unless-stopped
