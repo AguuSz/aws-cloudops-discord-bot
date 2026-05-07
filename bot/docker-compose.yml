@@ -1,5 +1,8 @@
+name: discord-aws-bot
+
 services:
   bot:
+    container_name: discord-aws-bot
     build:
       context: .
       dockerfile: Dockerfile
